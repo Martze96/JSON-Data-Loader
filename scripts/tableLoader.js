@@ -13,7 +13,7 @@ function loadData() {
             //JSON Daten werden in die const 'json' eingespeichert  
             const json = JSON.parse(request.responseText);
             loadPagination(json, pageNumber, pageSize)
-            appendData(json,0,15);
+            
 
         } catch (e) {
             console.warn("Could not load Data.")
@@ -23,7 +23,7 @@ function loadData() {
 }
 
 
-function appendData(json, pagenumber, pagesize) {
+function appendData(json) {
     
     var tableRef = document.getElementById('data-table')
 
@@ -46,15 +46,14 @@ function appendData(json, pagenumber, pagesize) {
 
 function loadPagination(json, pageNumber, pageSize) {
 
-    var pages = new Array();
+    
     var start = (pageNumber-1)*pageSize;
     var activePageSize = pageSize;
-
-    pages.push(json.slice(start,activePageSize));
-       
+    var pages = json.slice(start,activePageSize);
+    
        console.log(pages);
 
-       return pages;
+       appendData(pages);
 
 }
 
