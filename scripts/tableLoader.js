@@ -23,14 +23,25 @@ function loadData() {
 function appendData(json) {
 
     var tableRef = document.getElementById('data-table')
+    var pages = new Array();
 
+    for (var k = 0; k < pages.length; i++){
+        var start = 0
+        var end = 15;
+        pages.;
+    }
+    console.log(pages);
     
 
-    for (var i in json[i]) {                       // ggf. hier mal ein Template festlegen
-        console.log(i);
+    for (var i in json) {                       // ggf. hier mal ein Template festlegen
+
+        if(i == 15){
+            break;
+        
+        }
         var newRow = tableRef.insertRow(-1);
 
-        for (var j in json[i][j]) {
+        for (var j in json[i]) {
             if (j == 'token') {
                 break;
             }
