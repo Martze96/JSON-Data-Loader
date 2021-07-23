@@ -1,10 +1,8 @@
 
-function loadData() {
+function loadData(dataStart,dataEnd) {
 
     //const tableContent = new Array();
     const request = new XMLHttpRequest();
-    const pageSize = 15;
-    const pageNumber = 1;
 
     request.open("get", "data/EmployeeData.json");
 
@@ -12,7 +10,7 @@ function loadData() {
         try {
             //JSON Daten werden in die const 'json' eingespeichert  
             const json = JSON.parse(request.responseText);
-            loadPagination(json, pageNumber, pageSize)
+            loadPagination(json, dataStart, dataEnd);
             
 
         } catch (e) {
@@ -26,6 +24,12 @@ function loadData() {
 function appendData(json) {
     
     var tableRef = document.getElementById('data-table')
+
+    var rows = document.getElementById('rows');
+
+    while ( tableRef.hasChildNodes()){
+        tableRef.removeChild(tableRef.firstChild);
+    }
 
     for (var i in json) {                       // ggf. hier mal ein Template festlegen
 
@@ -44,13 +48,16 @@ function appendData(json) {
 
 }
 
-function loadPagination(json, pageNumber, pageSize) {
+function loadPagination(json, dataStart, dataEnd) {
+    console.log(dataStart);
+    console.log(dataEnd);
 
     
-    var start = (pageNumber-1)*pageSize;
-    var activePageSize = pageSize;
-    var pages = json.slice(start,activePageSize);
-    
+    var pages = new Array();
+    var start = dataStart;
+    var activePageSize = dataEnd;
+    pages = json.slice(start,activePageSize);
+
        console.log(pages);
 
        appendData(pages);
