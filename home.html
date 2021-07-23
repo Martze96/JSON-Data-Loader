@@ -17,7 +17,7 @@
 <body>
 
   <div class="topBar">
-    <h1 class="topBarHeader"> JQuery Datentabelle </h1>
+    <h1 class="topBarHeader"> JSON Datentabelle </h1>
   </div>
 
   <div class="pageDesc">
@@ -64,6 +64,8 @@
       if (dataStart != 45) {
         dataStart += 15;
         dataEnd += 15;
+        page++;
+        console.log(page)
       }
 
 
@@ -75,6 +77,8 @@
 if (dataStart != 0) {
   dataStart -= 15;
   dataEnd -= 15;
+  page--;
+  console.log(page)
 }
 
 
