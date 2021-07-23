@@ -3,6 +3,8 @@ function loadData() {
 
     //const tableContent = new Array();
     const request = new XMLHttpRequest();
+    const pageSize = 15;
+    const pageNumber = 1;
 
     request.open("get", "data/EmployeeData.json");
 
@@ -10,7 +12,8 @@ function loadData() {
         try {
             //JSON Daten werden in die const 'json' eingespeichert  
             const json = JSON.parse(request.responseText);
-            appendData(json);
+            loadPagination(json, pageNumber, pageSize)
+            appendData(json,0,15);
 
         } catch (e) {
             console.warn("Could not load Data.")
@@ -20,25 +23,12 @@ function loadData() {
 }
 
 
-function appendData(json) {
-
-    var tableRef = document.getElementById('data-table')
-    var pages = new Array();
-
-    for (var k = 0; k < pages.length; i++){
-        var start = 0
-        var end = 15;
-        pages.;
-    }
-    console.log(pages);
+function appendData(json, pagenumber, pagesize) {
     
+    var tableRef = document.getElementById('data-table')
 
     for (var i in json) {                       // ggf. hier mal ein Template festlegen
 
-        if(i == 15){
-            break;
-        
-        }
         var newRow = tableRef.insertRow(-1);
 
         for (var j in json[i]) {
@@ -50,43 +40,21 @@ function appendData(json) {
         }
     }
 
-    loadPagination(json);
+   // loadPagination(json);
 
-    // JQUERY ANSATZ:
-    /*     //Schleife durch Datensätze
-        $.each(json, function (i, d) {    // $('[Selector]').each() für DOM elemente, ansonsten so wie hier: $.each(LISTE, function(index, value) {...} );
-            //Anfang des Datensatzes mit HTML tag Tablerow --> row ist unser Datensatz (zeile)
-            row = '<tr>';
-            // $.each(d --> value von obiger Schleife, function(index,value --> datenzelle) {...} );
-            $.each(d, function (j, e) {
-                // If-Abfrage, weil wir nur bis Spalte 'Token' die Daten befüllen möchten
-                if (j == 'token') {
-                    return false;
-                }
-                //Füge somit jedes e (datenzelle) zwischen einem html datenzellen-Tag in die variable row ein 
-                row += '<td>' + e + '</td>';
-    
-            });
-            // Nun da row jetzt quasi eine komplette html tabelle bestehend aus trs und deren tds als String ist, schließen wir mit ende des tr's ab
-            row += '</tr>';
-            // jetzt wird hier der string aus row mit dem Tablebody der Tabelle mit der class data-Table angefügt
-            $('#data-table tbody').append(row); 
-        }) */
 }
 
-function loadPagination(json) {
+function loadPagination(json, pageNumber, pageSize) {
 
-    // JQUERY ANSATZ
-    /*     $('.pageContent').pagination({
-        dataSource: json,
-        totalNumber: 5,
-        callback: function (data, pagination) {
-            // template method of yourself --- geht auch ohne diese Methode, dann ist auch das Warning (could not load data) weg.
-            var html = template(data);
-            //schienbar muss hier der data container rein
-            $('.pageContent').html(html);
-        }
-    }) */
+    var pages = new Array();
+    var start = (pageNumber-1)*pageSize;
+    var activePageSize = pageSize;
+
+    pages.push(json.slice(start,activePageSize));
+       
+       console.log(pages);
+
+       return pages;
 
 }
 

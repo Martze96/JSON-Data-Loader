@@ -12,7 +12,6 @@
   <script src="scripts/jquery-3.6.0.min.js"></script>
   <script src="scripts/pagination.min.js"></script>
   <script type="text/javascript" src="scripts/tableLoader.js"></script>
-  <script type="text/javascript" src="scripts/pagination.js"></script>
 
 
 </head>
@@ -60,7 +59,7 @@
 
   <script>
     document.addEventListener("DOMContentLoaded", () => { loadData(); });
-   // document.getElementById("button_next", () => {paginateNext();} )
+    document.getElementById("button_next").addEventListener("click", () => {loadPagination(); });
 
   </script>
 </body>
