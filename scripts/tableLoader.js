@@ -24,10 +24,6 @@ function appendData(pages) {
 
     var tableRef = document.getElementById('data-table')
 
-    var rows = document.getElementById('rows');
-
-
-
     for (var i in pages) {                       // ggf. hier mal ein Template festlegen
 
         var newRow = tableRef.insertRow(-1);
