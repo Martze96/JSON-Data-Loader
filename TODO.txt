@@ -1,0 +1,18 @@
+DONE--CORS umgehen --> in vscode mit live server plugin
+DONE--Tabellendaten bis about einfügen in die Webseite --> mit jQuery hats geklappt, Spalten bis token eingefügt, ggf. counter für Allgemeinheit einrichten
+--Pagination einbauen
+--Suchfunktion einbauen
+-- Sortierfunktion der Spalten einabuen
+--ggf. DetailedPage einbauen für anzeige des gesamten Datensatzes in einer Liste formatiert.
+
+05.07.21
+- pagination.js api wurde eingefügt
+- bekomme es nicht zum laufen, seitenzahlen stehen dran, aber es fehlt noch was, da das design nicht geht und pagination nicht pagen möchte
+    - ggf. ist der input json nicht korrekt, da in der Tabelle der Inhalt von der var 'row' kommt und nicht von der json, weil ist in keinem Container, deswegen kann es vermutlich auch nicht artegerecht angezeigt werden
+    - vielleicht irgendwie row zu einem array ohne html tags machen, oder davor schon alle daten in einen array aufnehmen (schleife aus append?)
+
+06.07.21
+- reinladen der Daten nun mit Vanilla JS gemacht, hat für mich viel nachvollziehbarer geklappt, werde nun in Erwägung ziehen erstmal mit Vanilla JS an die Sachen ranzugehen.
+
+11.07.21
+- pagination html und css grob schonmal implementiert, in Chrome leseleiste relativ gutes Tutorial

@@ -1,0 +1,55 @@
+@import "colors.css";
+
+.topBar {
+  /*position and size*/
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 0;
+  margin: 0px;
+  width: 100%;
+  text-align: center;
+  /*colors*/
+  background-color: var(--steelblue);
+  box-shadow: 5px 2px 10px grey;
+  /*font*/
+  color: white;
+  font-family: sans-serif;
+  font-weight: 200 !important;
+}
+
+.pageDesc {
+  /* Add a top margin to avoid content overlay */
+  margin: 125px;
+  text-align: center;
+  /*font*/
+  font-family: sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--darkbluefont);
+}
+
+.pageContent{
+  margin: 50px;
+}
+
+#pagination-container{
+text-align: center;
+border: 1px solid grey;
+
+}
+
+.pageButton {
+  margin-right: 20px;
+  margin-left: 20px;
+  padding: 5px;
+  border: 2px solid black;
+  font-family: sans-serif;
+  font-size: 24px;
+  color: white;
+  background-color: var(--steelblue);
+}
+
+.pageNumber{
+
+}

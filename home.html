@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>homepage</title>
+  <link rel="stylesheet" href="style/main.css">
+  <link rel="stylesheet" href="style/home.css">
+  <link rel="stylesheet" href="style/table.css">
+
+  <script src="scripts/jquery-3.6.0.min.js"></script>
+  <script src="scripts/pagination.min.js"></script>
+  <script type="text/javascript" src="scripts/tableLoader.js"></script>
+  <script type="text/javascript" src="scripts/pagination.js"></script>
+
+
+</head>
+
+<body>
+
+  <div class="topBar">
+    <h1 class="topBarHeader"> JQuery Datentabelle </h1>
+  </div>
+
+  <div class="pageDesc">
+    <p> Ziel ist es, je nachdem was für JSON-Daten in dem Projektordner liegen, sie in einer schönen Tabelle anzuzeigen
+      und ggf. zu filtern. </p>
+  </div>
+
+  <div class="pageContent">
+
+    <table id="data-table" class="dataTable">
+
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>E-Mail</th>
+          <th>Password</th>
+          <th>About</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <!-- Hier füllt javascript die Daten rein!-->
+      </tbody>
+
+    </table>
+
+
+  </div>
+
+  <div id="pagination-container">
+    <span class="pageButton" id="button_prev">Vorherige</span>
+    <span id="pageNumber">...</span>
+    <span class="pageButton" id="button_next">Nächste</span>
+  </div>
+
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => { loadData(); });
+   // document.getElementById("button_next", () => {paginateNext();} )
+
+  </script>
+</body>
+
+</html>
