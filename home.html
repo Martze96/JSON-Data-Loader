@@ -70,6 +70,17 @@
       loadData(dataStart, dataEnd);
     });
 
+    document.getElementById("button_prev").addEventListener("click", () => {
+
+if (dataStart != 0) {
+  dataStart -= 15;
+  dataEnd -= 15;
+}
+
+
+loadData(dataStart, dataEnd);
+});
+
   </script>
 </body>
 
