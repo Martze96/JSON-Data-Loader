@@ -67,9 +67,8 @@
         page++;
         console.log(page)
       }
-
-
-      loadData(dataStart, dataEnd);
+      loadPagination(json, dataStart, dataEnd);
+      
     });
 
     document.getElementById("button_prev").addEventListener("click", () => {
@@ -80,9 +79,8 @@ if (dataStart != 0) {
   page--;
   console.log(page)
 }
+loadPagination(json, dataStart, dataEnd);
 
-
-loadData(dataStart, dataEnd);
 });
 
   </script>

@@ -1,9 +1,11 @@
 DONE--CORS umgehen --> in vscode mit live server plugin
-DONE--Tabellendaten bis about einfügen in die Webseite --> mit jQuery hats geklappt, Spalten bis token eingefügt, ggf. counter für Allgemeinheit einrichten
+DONE--Tabellendaten bis about einfügen in die Webseite 
 --Pagination einbauen
 --Suchfunktion einbauen
 -- Sortierfunktion der Spalten einabuen
 --ggf. DetailedPage einbauen für anzeige des gesamten Datensatzes in einer Liste formatiert.
+-- für mobile optimieren
+-- ggf. Daten aus Cloud holen
 
 05.07.21
 - pagination.js api wurde eingefügt
@@ -16,3 +18,12 @@ DONE--Tabellendaten bis about einfügen in die Webseite --> mit jQuery hats gekl
 
 11.07.21
 - pagination html und css grob schonmal implementiert, in Chrome leseleiste relativ gutes Tutorial
+
+24.07.21
+pagination läuft logisch gesehen, aber sehr unschön, nun der versuch das ganze schöner zu machen.
+- TODO eventlistener beim blättern sollte nicht immer loadData auslösen ( nur bei DOM Content loaded)
+- TODO loadPagination oder allgemein Pagination auf separate js datei bringen. + welche table? input table rien
+- TODO Rahmen beim Blättern entfernen
+
+
+

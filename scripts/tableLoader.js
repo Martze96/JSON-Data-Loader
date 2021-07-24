@@ -3,12 +3,11 @@ function loadData(dataStart, dataEnd) {
 
     //const tableContent = new Array();
     const request = new XMLHttpRequest();
-
     request.open("get", "data/EmployeeData.json");
 
     request.onload = () => {
         try {
-            //JSON Daten werden in die const 'json' eingespeichert  
+            //JSON Daten werden in die var 'json' eingespeichert  
             json = JSON.parse(request.responseText);
             loadPagination(json, dataStart, dataEnd);
 
@@ -24,13 +23,12 @@ function appendData(pages) {
 
     var tableRef = document.getElementById('data-table')
 
+    // zeilen nach jeder Blättern löschen
     for (var k = 1; k < tableRef.rows.length; k++ ) {
         tableRef.rows[k].innerHTML = "";
     } 
 
-
-   
-
+    // Zeilen einfügen
     for (var i in pages) {                       // ggf. hier mal ein Template festlegen
 
         var newRow = tableRef.insertRow(-1);
