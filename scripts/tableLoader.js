@@ -9,10 +9,9 @@ function loadData(dataStart, dataEnd) {
 
     request.onload = () => {
         try {
-            //JSON Daten werden in die var 'json' eingespeichert  
+            //JSON Daten werden in die var 'json' eingespeichert und in die Tabelle eingeschrieben
             json = JSON.parse(request.responseText);
-            loadPagination(json, dataStart, dataEnd);
-
+            replaceData(mainTable, json, dataStart, dataEnd);
 
         } catch (e) {
             console.warn("Could not load Data.")
@@ -20,27 +19,28 @@ function loadData(dataStart, dataEnd) {
     };
     request.send();
 }
-// aktualisiert Tabelleninhalt mit input json Array von den anzuzeigenden Daten (page)
-function appendData(page) {
 
-    var tableRef = document.getElementById('data-table')
+// aktualisiert Tabelleninhalt mit input json Array von den anzuzeigenden Daten (data), start end für den Bereich der anzuzeigenden Daten ( f. Pagination)
+function replaceData(table,data,start,end) {
+    
+    data = data.slice(start,end);
 
     // zeilen nach jeder Blättern löschen
-    for (var k = 1; k < tableRef.rows.length; k++ ) {
-        tableRef.rows[k].innerHTML = "";
+    for (var k = 1; k < table.rows.length; k++ ) {
+        table.rows[k].innerHTML = "";
     } 
 
     // Zeilen einfügen
-    for (var i in page) {                       // ggf. hier mal ein Template festlegen
+    for (var i in data) {                       // ggf. hier mal ein Template festlegen
 
-        var newRow = tableRef.insertRow(-1);
+        var newRow = table.insertRow(-1);
 
-        for (var j in page[i]) {
+        for (var j in data[i]) {
             if (j == 'token') {                 // Abbrechen bei Spaltenname Token, ACHTUNG speziell für employeeData.JSON
                 break;
             }
             var cell = newRow.insertCell(-1);
-            cell.innerHTML = page[i][j];
+            cell.innerHTML = data[i][j];
         }
     }
 

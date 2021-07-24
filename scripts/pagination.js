@@ -5,9 +5,9 @@ function pageBack() {
         page--;
         console.log(page)
       }
-      loadPagination(json, dataStart, dataEnd);
+      replaceData(mainTable,json,dataStart,dataEnd);
 }
-
+// eine Seite weiterblättern, variablen anpassen (Achtung 15er Schritte, je nach Anzahl Anzeige anpassen!)
 function pageNext() {
     if (dataStart != 45) {
         dataStart += 15;
@@ -15,20 +15,5 @@ function pageNext() {
         page++;
         console.log(page)
       }
-      loadPagination(json, dataStart, dataEnd);
-}
-
-// spaltet JSON Daten und gibt sie weiter um sie einzufügen
-function loadPagination(json, dataStart, dataEnd) {
-    console.log(dataStart);
-    console.log(dataEnd);
-
-    var page = new Array();
-
-    page = json.slice(dataStart, dataEnd);
-
-    console.log(page);
-
-    appendData(page);
-
+      replaceData(mainTable,json,dataStart,dataEnd);
 }
