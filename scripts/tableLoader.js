@@ -36,7 +36,7 @@ function appendData(page) {
         var newRow = tableRef.insertRow(-1);
 
         for (var j in page[i]) {
-            if (j == 'token') {
+            if (j == 'token') {                 // Abbrechen bei Spaltenname Token, ACHTUNG speziell für employeeData.JSON
                 break;
             }
             var cell = newRow.insertCell(-1);

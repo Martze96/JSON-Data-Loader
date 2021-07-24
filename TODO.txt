@@ -6,6 +6,7 @@ DONE--Tabellendaten bis about einfügen in die Webseite
 --ggf. DetailedPage einbauen für anzeige des gesamten Datensatzes in einer Liste formatiert.
 -- für mobile optimieren
 -- ggf. Daten aus Cloud holen
+-- Tableheader variabel machen, nicht einfach Spaltennamen von employeData abschreiben
 
 05.07.21
 - pagination.js api wurde eingefügt
