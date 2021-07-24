@@ -1,7 +1,7 @@
 var json = new Array();
 
 // Lädt Daten aus dem JSON-File
-function loadData(dataStart, dataEnd) {
+function loadData() {
 
     //const tableContent = new Array();
     const request = new XMLHttpRequest();
