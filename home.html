@@ -10,8 +10,7 @@
   <link rel="stylesheet" href="style/table.css">
 
   <script type="text/javascript" src="scripts/tableLoader.js"></script>
-
-
+  <script type="text/javascript" src="scripts/pagination.js"></script>
 </head>
 
 <body>
@@ -26,10 +25,7 @@
   </div>
 
   <div class="pageContent">
-
     <table id="data-table" class="dataTable">
-
-
         <tr>
           <th>ID</th>
           <th>Name</th>
@@ -37,13 +33,7 @@
           <th>Password</th>
           <th>About</th>
         </tr>
-  
-
-
-
     </table>
-
-
   </div>
 
   <div id="pagination-container">
@@ -52,37 +42,14 @@
     <span class="pageButton" id="button_next">Nächste</span>
   </div>
 
-
   <script>
     var page = 1;
     var pageSize = 15;
     var dataStart = 0;
     var dataEnd = 15;
     document.addEventListener("DOMContentLoaded", () => { loadData(dataStart, dataEnd); });
-    document.getElementById("button_next").addEventListener("click", () => {
-
-      if (dataStart != 45) {
-        dataStart += 15;
-        dataEnd += 15;
-        page++;
-        console.log(page)
-      }
-      loadPagination(json, dataStart, dataEnd);
-      
-    });
-
-    document.getElementById("button_prev").addEventListener("click", () => {
-
-if (dataStart != 0) {
-  dataStart -= 15;
-  dataEnd -= 15;
-  page--;
-  console.log(page)
-}
-loadPagination(json, dataStart, dataEnd);
-
-});
-
+    document.getElementById("button_next").addEventListener("click", () => {pageNext()});
+    document.getElementById("button_prev").addEventListener("click", () => {pageBack();});
   </script>
 </body>
 

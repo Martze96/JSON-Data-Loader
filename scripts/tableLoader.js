@@ -1,4 +1,6 @@
 var json = new Array();
+
+// Lädt Daten aus dem JSON-File
 function loadData(dataStart, dataEnd) {
 
     //const tableContent = new Array();
@@ -18,8 +20,8 @@ function loadData(dataStart, dataEnd) {
     };
     request.send();
 }
-
-function appendData(pages) {
+// aktualisiert Tabelleninhalt mit input json Array von den anzuzeigenden Daten (page)
+function appendData(page) {
 
     var tableRef = document.getElementById('data-table')
 
@@ -29,32 +31,19 @@ function appendData(pages) {
     } 
 
     // Zeilen einfügen
-    for (var i in pages) {                       // ggf. hier mal ein Template festlegen
+    for (var i in page) {                       // ggf. hier mal ein Template festlegen
 
         var newRow = tableRef.insertRow(-1);
 
-        for (var j in pages[i]) {
+        for (var j in page[i]) {
             if (j == 'token') {
                 break;
             }
             var cell = newRow.insertCell(-1);
-            cell.innerHTML = pages[i][j];
+            cell.innerHTML = page[i][j];
         }
     }
 
 }
 
-function loadPagination(json, dataStart, dataEnd) {
-    console.log(dataStart);
-    console.log(dataEnd);
-
-    var pages = new Array();
-
-    pages = json.slice(dataStart, dataEnd);
-
-    console.log(pages);
-
-    appendData(pages);
-
-}
 
