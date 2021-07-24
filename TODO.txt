@@ -7,6 +7,7 @@ DONE--Tabellendaten bis about einfügen in die Webseite
 -- für mobile optimieren
 -- ggf. Daten aus Cloud holen
 -- Tableheader variabel machen, nicht einfach Spaltennamen von employeData abschreiben
+-- Seite ist schon noch etwas gekoppelt von der Mainpage, (bspw. keine parameter bei pagenext/pagebefore (welche Tabelle?), Seitenzahl)
 
 05.07.21
 - pagination.js api wurde eingefügt
@@ -22,9 +23,11 @@ DONE--Tabellendaten bis about einfügen in die Webseite
 
 24.07.21
 pagination läuft logisch gesehen, aber sehr unschön, nun der versuch das ganze schöner zu machen.
-- TODO eventlistener beim blättern sollte nicht immer loadData auslösen ( nur bei DOM Content loaded)
-- TODO loadPagination oder allgemein Pagination auf separate js datei bringen. + welche table? input table rien
-- TODO Rahmen beim Blättern entfernen
+-DONE TODO eventlistener beim blättern sollte nicht immer loadData auslösen ( nur bei DOM Content loaded)
+-DONE TODO loadPagination oder allgemein Pagination auf separate js datei bringen. + welche table? input table rien
+
+-TODO anzeigen der Seitenzahlen und Highlight aktuelle Seitenzahl (rahmen entfernen danach)
+-TODO 
 
 
 
