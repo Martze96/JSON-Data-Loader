@@ -51,6 +51,11 @@ border: 1px solid grey;
   cursor:pointer;
 }
 
-.pageNumber{
+#pageNumbers{
+  font-family: sans-serif;
+  font-size: 22px;
+}
 
+.highlight{
+  color: red;
 }

@@ -12,6 +12,7 @@ function loadData() {
             //JSON Daten werden in die var 'json' eingespeichert und in die Tabelle eingeschrieben
             json = JSON.parse(request.responseText);
             replaceData(mainTable, json, dataStart, dataEnd);
+            displayPages();
 
         } catch (e) {
             console.warn("Could not load Data.")
