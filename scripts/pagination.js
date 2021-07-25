@@ -32,8 +32,8 @@ function displayPages() {
     var pageList = "";
     //Higlight Page
     if(page == i) {
-      pageList += '<span class="highlight">'
-      + i + '</span>' + ', ';
+      pageList += '<a class="highlight">'
+      + i + '</a>' + ', ';
     } else {
 
       if(i != pageAmount) {

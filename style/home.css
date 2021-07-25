@@ -20,7 +20,7 @@
 
 .pageDesc {
   /* Add a top margin to avoid content overlay */
-  margin: 125px;
+  margin-top:125px;
   text-align: center;
   /*font*/
   font-family: sans-serif;
@@ -35,17 +35,17 @@
 
 #pagination-container{
 text-align: center;
-border: 1px solid grey;
 
 }
 
 .pageButton {
   margin-right: 20px;
   margin-left: 20px;
-  padding: 5px;
-  border: 2px solid black;
+  padding: 10px;
+  border: 1px solid dimgray;
+  box-shadow: 0px 0px 5px grey;
   font-family: sans-serif;
-  font-size: 24px;
+  font-size: 20px;
   color: white;
   background-color: var(--steelblue);
   cursor:pointer;
@@ -54,8 +54,9 @@ border: 1px solid grey;
 #pageNumbers{
   font-family: sans-serif;
   font-size: 22px;
+  color: grey;
 }
 
 .highlight{
-  color: red;
+  color: var(--steelblue);
 }

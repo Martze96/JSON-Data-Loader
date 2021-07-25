@@ -33,13 +33,14 @@ function replaceData(table,data,start,end) {
 
     // Zeilen einfügen
     for (var i in data) {                       // ggf. hier mal ein Template festlegen
-
+        console.log(i);
         var newRow = table.insertRow(-1);
 
         for (var j in data[i]) {
-            if (j == 'token') {                 // Abbrechen bei Spaltenname Token, ACHTUNG speziell für employeeData.JSON
+            if (j == 'about') {                 // Abbrechen bei Spaltenname Token, ACHTUNG speziell für employeeData.JSON
                 break;
             }
+            
             var cell = newRow.insertCell(-1);
             cell.innerHTML = data[i][j];
         }
