@@ -27,7 +27,7 @@ pagination läuft logisch gesehen, aber sehr unschön, nun der versuch das ganze
 -DONE TODO loadPagination oder allgemein Pagination auf separate js datei bringen. + welche table? input table rien
 
 -DONE TODO anzeigen der Seitenzahlen und Highlight aktuelle Seitenzahl 
--TODO Seitenanzahl ineffizient ausgestaltet, ggf. sollte jede Zahl ein Element sein mit inkrementeller id ? (rahmen entfernen danach)
+-TODO Seitenanzahl ineffizient ausgestaltet, ggf. sollte jede Zahl ein Element sein mit inkrementeller id ? 
 -TODO 
 
 
