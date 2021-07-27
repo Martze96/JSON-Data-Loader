@@ -22,7 +22,7 @@ function switchPage(shownPage,toPage) {
 
 
 }
-// Achtung, spaninhalt folgt mit zwei Spaces ! (&nbcsp;)
+// Achtung, pageNumbers haben 2 Spaces (für Formatierung)
 function displayPages() {
   var pageNumbers = document.getElementById('pageNumbers');
   var pageAmount = Math.ceil(json.length/pageSize);
