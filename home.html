@@ -49,8 +49,11 @@
     var dataEnd = dataStart + pageSize;
     var mainTable = document.getElementById('data-table');
     document.addEventListener("DOMContentLoaded", () => { loadData(); });
-    document.getElementById("button_next").addEventListener("click", () => {switchPage("next")});
-    document.getElementById("button_prev").addEventListener("click", () => {switchPage("prev");});
+    document.getElementById("button_next").addEventListener("click", () => {switchPage(page,page+1); });
+    document.getElementById("button_prev").addEventListener("click", () => {switchPage(page,page-1); });
+/*    document.getElementById("1").addEventListener("click", () => { switchPage(page,1); });
+    document.getElementById("2").addEventListener("click", () => { switchPage(page,2); });
+    document.getElementById("3").addEventListener("click", () => { switchPage(page,3); }); */
   </script>
 </body>
 

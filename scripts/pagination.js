@@ -1,16 +1,19 @@
-function switchPage(direction) {
+function switchPage(shownPage,toPage) {
+  var steps = shownPage - toPage;
+  console.log(steps);
+
 var pageAmount = Math.ceil(json.length/pageSize)
-  //go next Page
-  if(direction == "next" && page != pageAmount) {
-    dataStart += pageSize;
-    dataEnd += pageSize;
-    page++;
+  //forward
+  if(steps < 0 && page != pageAmount) {
+    dataStart += pageSize*(steps*-1);
+    dataEnd += pageSize*(steps*-1);
+    page = toPage;
   }
   //go previous page
-  if(direction == "prev" && page != 1) {
-    dataStart -= pageSize;
-    dataEnd -= pageSize;
-    page--;
+  if(steps > 0 && page != 1) {
+    dataStart -= pageSize*steps;
+    dataEnd -= pageSize*(steps);
+    page = toPage;
   }
   console.log(page);
   replaceData(mainTable,json,dataStart,dataEnd);
@@ -29,13 +32,17 @@ function displayPages() {
     var pageList = "";
     //Higlight Page
     if(page == i) {
-      pageList += '<a class="highlight">'
+      pageList += '<a class="highlight" id ='
+      pageList += '"'+i+'">'
       + i + '</a>' + ', ';
     } else {
       //comma handling
       if(i != pageAmount) {
+        pageList +="<a id =" + '"'+i+'">';
+      //  pageList += 'href="#" onclick="switchPage(page,'+i+')">';
         pageList += i;
         pageList += ", ";
+        pageList += '</a>';
       } else {
         pageList += i;
       }
