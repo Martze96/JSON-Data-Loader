@@ -44,9 +44,10 @@
 
   <script>
     var page = 1;
-    var pageSize = 15;
+    var pageSize = 3;
+    
     var dataStart = 0;
-    var dataEnd = 15;
+    var dataEnd = dataStart + pageSize;
     var mainTable = document.getElementById('data-table');
     document.addEventListener("DOMContentLoaded", () => { loadData(); });
     document.getElementById("button_next").addEventListener("click", () => {pageNext()});

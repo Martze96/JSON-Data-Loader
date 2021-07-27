@@ -1,7 +1,8 @@
+
 function pageBack() {
-    if (dataStart != 0) {
-        dataStart -= 15;
-        dataEnd -= 15;
+    if (page != 1) {
+        dataStart -= pageSize;
+        dataEnd -= pageSize;
         page--;
         console.log(page)
         replaceData(mainTable,json,dataStart,dataEnd);
@@ -11,9 +12,10 @@ function pageBack() {
 }
 // eine Seite weiterblättern, variablen anpassen (Achtung 15er Schritte, je nach Anzahl Anzeige anpassen!)
 function pageNext() {
-    if (dataStart != 45) {
-        dataStart += 15;
-        dataEnd += 15;
+    if (page != Math.ceil(json.length/pageSize)) {
+      console.log(json.length- pageSize);
+        dataStart += pageSize;
+        dataEnd += pageSize;
         page++;
         console.log(page)
         replaceData(mainTable,json,dataStart,dataEnd);
@@ -25,7 +27,8 @@ function pageNext() {
 // ineffizient
 function displayPages() {
   var pageNumbers = document.getElementById('pageNumbers');
-  pageAmount = Math.ceil(json.length/pageSize);
+
+  var pageAmount = Math.ceil(json.length/pageSize);
   pageNumbers.innerHTML = "";
   
   for(var i = 1; i <= pageAmount; i++ ){
