@@ -32,7 +32,7 @@ function displayPages() {
       pageList += '<a class="highlight">'
       + i + '</a>' + ', ';
     } else {
-
+      //comma handling
       if(i != pageAmount) {
         pageList += i;
         pageList += ", ";
@@ -41,11 +41,14 @@ function displayPages() {
       }
 
     }
-
-
     pageNumbers.innerHTML += pageList;
-
   }
+  // get comma away if highlight on last page number
+  if(page == pageAmount){
+    pageNumbers.innerHTML = pageNumbers.innerHTML.substr(0,pageNumbers.innerHTML.length-2);
+  }
+
+ 
 
 }
 
