@@ -28,17 +28,22 @@ function displayPages() {
 
   var pageAmount = Math.ceil(json.length/pageSize);
   pageNumbers.innerHTML = "";
-  
+
   for(var i = 1; i <= pageAmount; i++ ){
     console.log(pageAmount);
+    
+    var higlight = "";
+    var id = "";
     var pageList = "";
+
     //Higlight Page
     if(page == i) {
       pageList += '<a class="highlight" id ='
+      highlight = 'class="highlight" ';
       pageList += '"'+i+'">'
       + i + '</a>' + ', ';
     } else {
-      
+      highlight  = "";
       if(i != pageAmount) {
         pageList +="<a id =" + '"'+i+'" ';
         pageList += ' onclick="switchPage(page,'+i+')">';
@@ -53,14 +58,12 @@ function displayPages() {
       }
 
     }
-    pageNumbers.innerHTML += pageList;
+    var temp = '<a ' + highlight + ' id="' + i + '"' + ' onclick="switchPage(page,'+i+')">' + i + ', </a>'; 
+    pageNumbers.innerHTML += temp;
   }
   // get comma away if highlight on last page number
- // if(page == pageAmount){
- //   pageNumbers.innerHTML = pageNumbers.innerHTML.substr(0,pageNumbers.innerHTML.length-1);
- // }
-
- 
-
+  if(page == pageAmount){
+    pageNumbers.innerHTML = pageNumbers.innerHTML.substr(0,pageNumbers.innerHTML.length-6);
+  }
 }
 
