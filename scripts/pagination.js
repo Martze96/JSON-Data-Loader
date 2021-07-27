@@ -22,48 +22,21 @@ function switchPage(shownPage,toPage) {
 
 
 }
-// ineffizient
+// Achtung, spaninhalt folgt mit zwei Spaces ! (&nbcsp;)
 function displayPages() {
   var pageNumbers = document.getElementById('pageNumbers');
-
   var pageAmount = Math.ceil(json.length/pageSize);
   pageNumbers.innerHTML = "";
 
   for(var i = 1; i <= pageAmount; i++ ){
-    console.log(pageAmount);
-    
-    var higlight = "";
-    var id = "";
-    var pageList = "";
-
     //Higlight Page
     if(page == i) {
-      pageList += '<a class="highlight" id ='
       highlight = 'class="highlight" ';
-      pageList += '"'+i+'">'
-      + i + '</a>' + ', ';
     } else {
-      highlight  = "";
-      if(i != pageAmount) {
-        pageList +="<a id =" + '"'+i+'" ';
-        pageList += ' onclick="switchPage(page,'+i+')">';
-        pageList += i;
-        pageList += ", ";
-        pageList += '</a>';
-      } else {
-        pageList +="<a id =" + '"'+i+'" ';
-        pageList += ' onclick="switchPage(page,'+i+')">';
-        pageList += i;
-        pageList += '</a>';
-      }
-
+      highlight = "";
     }
-    var temp = '<a ' + highlight + ' id="' + i + '"' + ' onclick="switchPage(page,'+i+')">' + i + ', </a>'; 
+    var temp = '<a ' + highlight + ' id="' + i + '"' + ' onclick="switchPage(page,'+i+')">' + i +'&nbsp;&nbsp;</a>'; 
     pageNumbers.innerHTML += temp;
-  }
-  // get comma away if highlight on last page number
-  if(page == pageAmount){
-    pageNumbers.innerHTML = pageNumbers.innerHTML.substr(0,pageNumbers.innerHTML.length-6);
   }
 }
 
