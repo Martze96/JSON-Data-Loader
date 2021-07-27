@@ -31,10 +31,10 @@ pagination läuft logisch gesehen, aber sehr unschön, nun der versuch das ganze
 -OPTIONAL TODO Seitenanzahl ineffizient ausgestaltet, ggf. sollte jede Zahl ein Element sein mit inkrementeller id ?  
 
 27.07.2021
--TODO Anzeige Daten pro Seite anpassen per Buttons 5, 10, 15
--TODO Seitenzahlen unter Tabelle sollen ein Link sein und dann zur der Seite führen
--TODO displayPages effizienter machen
+-DONE TODO Seitenzahlen unter Tabelle sollen ein Link sein und dann zur der Seite führen
+-DONE TODO displayPages effizienter machen
 -DONE TODO aus Page next und Page before einfach switchPage machen mit input welche Seite 
+-TODO Anzeige Daten pro Seite anpassen per Buttons 5, 10, 15
 
 
 
