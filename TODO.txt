@@ -33,6 +33,7 @@ pagination läuft logisch gesehen, aber sehr unschön, nun der versuch das ganze
 27.07.2021
 -TODO Anzeige Daten pro Seite anpassen per Buttons 5, 10, 15
 -TODO Seitenzahlen unter Tabelle sollen ein Link sein und dann zur der Seite führen
+-TODO displayPages effizienter machen
 -DONE TODO aus Page next und Page before einfach switchPage machen mit input welche Seite 
 
 

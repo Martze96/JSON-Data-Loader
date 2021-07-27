@@ -1,9 +1,10 @@
 function switchPage(shownPage,toPage) {
+  //calculate steps to toPage
   var steps = shownPage - toPage;
   console.log(steps);
-
-var pageAmount = Math.ceil(json.length/pageSize)
-  //forward
+  //calculate amount of Pages in total
+  var pageAmount = Math.ceil(json.length/pageSize)
+  //forward (steps will be negative becaus toPage > shownPage)
   if(steps < 0 && page != pageAmount) {
     dataStart += pageSize*(steps*-1);
     dataEnd += pageSize*(steps*-1);
@@ -12,7 +13,7 @@ var pageAmount = Math.ceil(json.length/pageSize)
   //go previous page
   if(steps > 0 && page != 1) {
     dataStart -= pageSize*steps;
-    dataEnd -= pageSize*(steps);
+    dataEnd -= pageSize*steps;
     page = toPage;
   }
   console.log(page);
@@ -29,6 +30,7 @@ function displayPages() {
   pageNumbers.innerHTML = "";
   
   for(var i = 1; i <= pageAmount; i++ ){
+    console.log(pageAmount);
     var pageList = "";
     //Higlight Page
     if(page == i) {
@@ -36,24 +38,27 @@ function displayPages() {
       pageList += '"'+i+'">'
       + i + '</a>' + ', ';
     } else {
-      //comma handling
+      
       if(i != pageAmount) {
-        pageList +="<a id =" + '"'+i+'">';
-      //  pageList += 'href="#" onclick="switchPage(page,'+i+')">';
+        pageList +="<a id =" + '"'+i+'" ';
+        pageList += ' onclick="switchPage(page,'+i+')">';
         pageList += i;
         pageList += ", ";
         pageList += '</a>';
       } else {
+        pageList +="<a id =" + '"'+i+'" ';
+        pageList += ' onclick="switchPage(page,'+i+')">';
         pageList += i;
+        pageList += '</a>';
       }
 
     }
     pageNumbers.innerHTML += pageList;
   }
   // get comma away if highlight on last page number
-  if(page == pageAmount){
-    pageNumbers.innerHTML = pageNumbers.innerHTML.substr(0,pageNumbers.innerHTML.length-2);
-  }
+ // if(page == pageAmount){
+ //   pageNumbers.innerHTML = pageNumbers.innerHTML.substr(0,pageNumbers.innerHTML.length-1);
+ // }
 
  
 
