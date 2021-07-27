@@ -1,28 +1,22 @@
+function switchPage(direction) {
+var pageAmount = Math.ceil(json.length/pageSize)
+  //go next Page
+  if(direction == "next" && page != pageAmount) {
+    dataStart += pageSize;
+    dataEnd += pageSize;
+    page++;
+  }
+  //go previous page
+  if(direction == "prev" && page != 1) {
+    dataStart -= pageSize;
+    dataEnd -= pageSize;
+    page--;
+  }
+  console.log(page);
+  replaceData(mainTable,json,dataStart,dataEnd);
+  displayPages();
 
-function pageBack() {
-    if (page != 1) {
-        dataStart -= pageSize;
-        dataEnd -= pageSize;
-        page--;
-        console.log(page)
-        replaceData(mainTable,json,dataStart,dataEnd);
-        displayPages();
-      }
-      
-}
-// eine Seite weiterblättern, variablen anpassen (Achtung 15er Schritte, je nach Anzahl Anzeige anpassen!)
-function pageNext() {
-    if (page != Math.ceil(json.length/pageSize)) {
-      console.log(json.length- pageSize);
-        dataStart += pageSize;
-        dataEnd += pageSize;
-        page++;
-        console.log(page)
-        replaceData(mainTable,json,dataStart,dataEnd);
-        displayPages();
 
-      }
-      
 }
 // ineffizient
 function displayPages() {

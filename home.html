@@ -44,13 +44,13 @@
 
   <script>
     var page = 1;
-    var pageSize = 3;
+    var pageSize = 10;
     var dataStart = 0;
     var dataEnd = dataStart + pageSize;
     var mainTable = document.getElementById('data-table');
     document.addEventListener("DOMContentLoaded", () => { loadData(); });
-    document.getElementById("button_next").addEventListener("click", () => {pageNext()});
-    document.getElementById("button_prev").addEventListener("click", () => {pageBack();});
+    document.getElementById("button_next").addEventListener("click", () => {switchPage("next")});
+    document.getElementById("button_prev").addEventListener("click", () => {switchPage("prev");});
   </script>
 </body>
 
