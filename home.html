@@ -25,6 +25,11 @@
   </div>
 
   <div class="pageContent">
+    
+    <button class = "pageSizeButton" onclick = 'reloadWithPageSize(5)'>5</button>
+    <button class = "pageSizeButton" onclick = 'reloadWithPageSize(10);'> 10 </button>
+    <button class = "pageSizeButton" onclick = 'reloadWithPageSize(20);'>20</button>
+    
     <table id="data-table" class="dataTable">
         <tr>
           <!--TableHeader sind speziell für employeeData.json benannt!-->
@@ -46,7 +51,7 @@
     // global Speicheort Pattern nochmal schauen
     // factory pattern googeln
     var page = 1;
-    var pageSize = 5;
+    var pageSize = 10;
     var dataStart = 0;
     var dataEnd = dataStart + pageSize;
     var mainTable = document.getElementById('data-table');

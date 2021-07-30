@@ -1,7 +1,6 @@
 function switchPage(shownPage,toPage) {
   //calculate steps to toPage
   var steps = shownPage - toPage;
-  console.log(steps);
   //calculate amount of Pages in total
   var pageAmount = Math.ceil(json.length/pageSize)
   //forward (steps will be negative becaus toPage > shownPage)
@@ -16,7 +15,6 @@ function switchPage(shownPage,toPage) {
     dataEnd -= pageSize*steps;
     page = toPage;
   }
-  console.log(page);
   replaceData(mainTable,json,dataStart,dataEnd);
   displayPages();
 
@@ -38,5 +36,14 @@ function displayPages() {
     var temp = '<a ' + highlight + ' id="' + i + '"' + ' onclick="switchPage(page,'+i+')">' + i +'&nbsp;&nbsp;</a>'; 
     pageNumbers.innerHTML += temp;
   }
+}
+
+function reloadWithPageSize(newPageSize){
+  pageSize = newPageSize;
+  page = 1;
+  dataStart = 0;
+  dataEnd = dataStart + pageSize;
+  replaceData(mainTable,json,dataStart,dataEnd);
+  displayPages();
 }
 

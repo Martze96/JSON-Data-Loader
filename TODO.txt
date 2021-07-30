@@ -1,6 +1,7 @@
 DONE--CORS umgehen --> in vscode mit live server plugin
 DONE--Tabellendaten bis about einfügen in die Webseite 
 --Pagination einbauen
+- Download Funktion, davor keine Tabelle anzeigen, von JSON und von CSV Datei 
 --Suchfunktion einbauen
 -- Sortierfunktion der Spalten einabuen
 --ggf. DetailedPage einbauen für anzeige des gesamten Datensatzes in einer Liste formatiert.
@@ -34,7 +35,9 @@ pagination läuft logisch gesehen, aber sehr unschön, nun der versuch das ganze
 -DONE TODO Seitenzahlen unter Tabelle sollen ein Link sein und dann zur der Seite führen
 -DONE TODO displayPages effizienter machen
 -DONE TODO aus Page next und Page before einfach switchPage machen mit input welche Seite 
--TODO Anzeige Daten pro Seite anpassen per Buttons 5, 10, 15
+-DONE TODO Anzeige Daten pro Seite anpassen per Buttons 5, 10, 15
+-DONE TODO PageSizebuttons zentrieren 
+
 
 
 
