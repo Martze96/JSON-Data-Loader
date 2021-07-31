@@ -1,9 +1,37 @@
+document.addEventListener("DOMContentLoaded", () => { loadData(); });
 var json = new Array();
 
 // Lädt Daten aus dem JSON-File
 function loadData() {
+    document.getElementById('fileInput').onchange = function(evt) {
+        try {
+            let files = evt.target.files;
+            if (!files.length) {
+                alert('Keine Datei ausgewählt!');
+                return;
+            }
+            let file = files[0];
+            let reader = new FileReader();
+            const self = this;
+            reader.onload = (event) => {
+                //console.log('FILE CONTENT', event.target.result);
+                json = JSON.parse(event.target.result);
+                console.log(json);
+                replaceData(mainTable, json, dataStart,dataEnd);
+                displayPages();
+            };
+            reader.readAsText(file);
 
-    //const tableContent = new Array();
+        } catch (err) {
+            console.error(err);
+        }
+    }
+    
+
+
+
+    //Code wenn JSON direkt im Projektordner platziert wird
+    /*
     const request = new XMLHttpRequest();
     request.open("get", "data/EmployeeData.json");
 
@@ -19,6 +47,10 @@ function loadData() {
         }
     };
     request.send();
+    */
+
+  // replaceData(mainTable, json, dataStart,dataEnd);
+  // displayPages();
 }
 
 // aktualisiert Tabelleninhalt mit input json Array von den anzuzeigenden Daten (data), start end für den Bereich der anzuzeigenden Daten ( f. Pagination)

@@ -39,9 +39,11 @@ pagination läuft logisch gesehen, aber sehr unschön, nun der versuch das ganze
 30.07.2021
 -DONE TODO Anzeige Daten pro Seite anpassen per Buttons 5, 10, 15
 -DONE TODO PageSizebuttons zentrieren 
+31.07.2021
+-DONE TODO Upload-Funktion
 
--TODO Upload-Funktion
 -TODO 4 Spalten eingrenzen, nicht mit Spaltenname Token
+-TODO ggf, pagination bug --> wenn keine Daten, kein Pagination!
 
 
 

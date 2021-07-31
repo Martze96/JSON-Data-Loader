@@ -1,3 +1,5 @@
+
+
 function switchPage(shownPage,toPage) {
   //calculate steps to toPage
   var steps = shownPage - toPage;
