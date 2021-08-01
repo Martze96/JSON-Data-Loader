@@ -18,14 +18,15 @@ function loadData() {
             document.getElementById('page-size-selector').style.visibility = "visible";
             document.getElementById("uploadedFileName").innerHTML = files[0].name;
             let reader = new FileReader();
-            const self = this;
-            reader.onload = (event) => {
+            //const self = this; nicht nötig scheinbar
+            //console.log(self);
+            reader.onload = (event) => {                            //onload anderes Format für DOMContentLoaded event wenn ich richtig verstehe
                 //console.log('FILE CONTENT', event.target.result);
-                json = JSON.parse(event.target.result);
+                json = JSON.parse(event.target.result);             // event target result ist der Inhalt vom JSON File (Ergebnis vom reader?)
                 replaceData(mainTable, json, dataStart,dataEnd);
                 displayPages();
             };
-            reader.readAsText(file);
+            reader.readAsText(file); //nochmal einspeicherung in den Reader als Text? obwohl ich das schon mit JSON Parse gemacht habe glaube ich
 
         } catch (err) {
             console.error(err);
@@ -59,6 +60,7 @@ function loadData() {
 }
 
 // aktualisiert Tabelleninhalt mit input json Array von den anzuzeigenden Daten (data), start end für den Bereich der anzuzeigenden Daten ( f. Pagination)
+// Funktion wurde nur mit JSON Array mit 2er Tiefe getestet, weitere Tiefen ausstehend
 function replaceData(table,data,start,end) {
     
     data = data.slice(start,end);
@@ -66,21 +68,26 @@ function replaceData(table,data,start,end) {
     // zeilen nach jeder Blättern löschen
     for (var k = 1; k < table.rows.length; k++ ) {
         table.rows[k].innerHTML = "";
-    } 
+    }
+    var iterator = 0; 
 
     // Zeilen einfügen
     for (var i in data) {                       // ggf. hier mal ein Template festlegen
 
         var newRow = table.insertRow(-1);
+    
 
         for (var j in data[i]) {
-            if (j == 'about') {                 // Abbrechen bei Spaltenname Token, ACHTUNG speziell für employeeData.JSON
+
+            if(iterator == 4){
+                iterator = 0;
                 break;
             }
-            
+            iterator++;
             var cell = newRow.insertCell(-1);
             cell.innerHTML = data[i][j];
         }
+        
     }
 
 }
