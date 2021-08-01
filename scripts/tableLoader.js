@@ -1,8 +1,10 @@
 document.addEventListener("DOMContentLoaded", () => { loadData(); });
 var json = new Array();
 
+
 // Lädt Daten aus dem JSON-File
 function loadData() {
+    
     document.getElementById('fileInput').onchange = function(evt) {
         try {
             let files = evt.target.files;
@@ -11,13 +13,15 @@ function loadData() {
                 return;
             }
             let file = files[0];
+            document.getElementById('pagination-container').style.visibility = "visible";
+            document.getElementById('data-table').style.visibility = "visible";
+            document.getElementById('page-size-selector').style.visibility = "visible";
             document.getElementById("uploadedFileName").innerHTML = files[0].name;
             let reader = new FileReader();
             const self = this;
             reader.onload = (event) => {
                 //console.log('FILE CONTENT', event.target.result);
                 json = JSON.parse(event.target.result);
-                console.log(json);
                 replaceData(mainTable, json, dataStart,dataEnd);
                 displayPages();
             };

@@ -42,10 +42,12 @@ pagination läuft logisch gesehen, aber sehr unschön, nun der versuch das ganze
 31.07.2021
 -DONE TODO Upload-Funktion
 
--TODO fileUploader stylen
+-DONE TODO fileUploader stylen
 -TODO 4 Spalten eingrenzen, nicht mit Spaltenname Token
--TODO ggf, pagination bug --> wenn keine Daten, kein Pagination!
+-DONE TODO ggf, pagination bug --> wenn keine Daten, kein Pagination!
 -TODO nochmal die uploadfunktion verstehen
+
+-TODO mit anderen JSON-Daten versuchen (gleiche tiefe und verschiedene Tiefe, dann fixen)
 
 
 

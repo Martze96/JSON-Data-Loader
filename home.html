@@ -33,7 +33,7 @@
     </div>
 
 
-    <div class="pageSizeSelector">
+    <div class="pageSizeSelector" id= "page-size-selector" style = "visibility: hidden;">
       <p id = "pageSizeInfo">Zeilen pro Seite: </p>
       <button class="pageSizeButton" onclick='reloadWithPageSize(5)'>5</button>
       <button class="pageSizeButton" onclick='reloadWithPageSize(10);'> 10 </button>
@@ -41,7 +41,7 @@
     </div>
 
 
-    <table id="data-table" class="dataTable">
+    <table id="data-table" class="dataTable" style = "visibility: hidden;">
       <tr>
         <!--TableHeader sind speziell für employeeData.json benannt!-->
         <th>ID</th>
@@ -52,7 +52,7 @@
     </table>
   </div>
 
-  <div id="pagination-container">
+  <div id="pagination-container" style="visibility: hidden;">
     <span class="pageButton" id="button_prev">Vorherige</span>
     <span id="pageNumbers"></span>
     <span class="pageButton" id="button_next">Nächste</span>
@@ -66,6 +66,7 @@
     var dataStart = 0;
     var dataEnd = dataStart + pageSize;
     var mainTable = document.getElementById('data-table');
+    
     document.getElementById("button_next").addEventListener("click", () => { switchPage(page, page + 1); });
     document.getElementById("button_prev").addEventListener("click", () => { switchPage(page, page - 1); });
   </script>
