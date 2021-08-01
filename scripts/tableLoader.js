@@ -11,6 +11,7 @@ function loadData() {
                 return;
             }
             let file = files[0];
+            document.getElementById("uploadedFileName").innerHTML = files[0].name;
             let reader = new FileReader();
             const self = this;
             reader.onload = (event) => {

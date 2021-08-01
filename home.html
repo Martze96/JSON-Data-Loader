@@ -25,21 +25,30 @@
   </div>
 
   <div class="pageContent">
-    <label id= "uploadLabel">Laden Sie hier JSON Daten hoch.</label>
-   <input type = "file" id="fileInput" accept= "application/JSON">
 
-    <button class = "pageSizeButton" onclick = 'reloadWithPageSize(5)'>5</button>
-    <button class = "pageSizeButton" onclick = 'reloadWithPageSize(10);'> 10 </button>
-    <button class = "pageSizeButton" onclick = 'reloadWithPageSize(20);'>20</button>
-    
+    <div class = "fileUpload">
+      <label for  = "fileInput" id="uploadLabel">JSON-Datei hochladen</label>
+      <input type="file" id="fileInput" accept="application/JSON">
+      <p id="uploadedFileName">Keine Datei hochgeladen.</p>
+    </div>
+
+
+    <div class="pageSizeSelector">
+      <p id = "pageSizeInfo">Zeilen pro Seite: </p>
+      <button class="pageSizeButton" onclick='reloadWithPageSize(5)'>5</button>
+      <button class="pageSizeButton" onclick='reloadWithPageSize(10);'> 10 </button>
+      <button class="pageSizeButton" onclick='reloadWithPageSize(20);'>20</button>
+    </div>
+
+
     <table id="data-table" class="dataTable">
-        <tr>
-          <!--TableHeader sind speziell für employeeData.json benannt!-->
-          <th>ID</th>
-          <th>Name</th>
-          <th>E-Mail</th>
-          <th>Password</th>
-        </tr>
+      <tr>
+        <!--TableHeader sind speziell für employeeData.json benannt!-->
+        <th>ID</th>
+        <th>Name</th>
+        <th>E-Mail</th>
+        <th>Password</th>
+      </tr>
     </table>
   </div>
 
@@ -57,8 +66,8 @@
     var dataStart = 0;
     var dataEnd = dataStart + pageSize;
     var mainTable = document.getElementById('data-table');
-    document.getElementById("button_next").addEventListener("click", () => {switchPage(page,page+1); });
-    document.getElementById("button_prev").addEventListener("click", () => {switchPage(page,page-1); });
+    document.getElementById("button_next").addEventListener("click", () => { switchPage(page, page + 1); });
+    document.getElementById("button_prev").addEventListener("click", () => { switchPage(page, page - 1); });
   </script>
 </body>
 
