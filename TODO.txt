@@ -7,7 +7,7 @@ DONE--Pagination einbauen
 --ggf. DetailedPage einbauen für anzeige des gesamten Datensatzes in einer Liste formatiert.
 -- für mobile optimieren
 -- ggf. Daten aus Cloud holen
--- Tableheader variabel machen, nicht einfach Spaltennamen von employeData abschreiben
+
 -- Seite ist schon noch etwas gekoppelt von der Mainpage, (bspw. keine parameter bei pagenext/pagebefore (welche Tabelle?), Seitenzahl)
 
 05.07.21
@@ -49,6 +49,7 @@ pagination läuft logisch gesehen, aber sehr unschön, nun der versuch das ganze
 -DONE TODO nochmal die uploadfunktion verstehen
 
 -TODO mit anderen JSON-Daten versuchen (gleiche tiefe und verschiedene Tiefe, dann fixen)
+-TODO Tableheader variabel machen, nicht einfach Spaltennamen von employeData abschreiben
 
 
 
