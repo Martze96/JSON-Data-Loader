@@ -48,8 +48,11 @@ pagination läuft logisch gesehen, aber sehr unschön, nun der versuch das ganze
 -DONE TODO ggf, pagination bug --> wenn keine Daten, kein Pagination!
 -DONE TODO nochmal die uploadfunktion verstehen
 
--TODO mit anderen JSON-Daten versuchen (gleiche tiefe und verschiedene Tiefe, dann fixen)
--TODO Tableheader variabel machen, nicht einfach Spaltennamen von employeData abschreiben
+03.08.2021
+-DONE TODO testen mit anderen JSON Arrays (ohne Hierarchie)
+-DONE TODO Tableheader variabel machen, nicht einfach Spaltennamen von employeData abschreiben
 
+-TODO für JSON Objects anpassen
+-TODO für JSON Objects und Arrays mit Hierarchie anpassen
 
 
