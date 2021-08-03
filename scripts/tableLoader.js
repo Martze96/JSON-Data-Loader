@@ -62,10 +62,20 @@ function loadData() {
 // aktualisiert Tabelleninhalt mit input json Array von den anzuzeigenden Daten (data), start end für den Bereich der anzuzeigenden Daten ( f. Pagination)
 // Funktion wurde nur mit JSON Array mit 2er Tiefe getestet, weitere Tiefen ausstehend
 function replaceData(table,data,start,end) {
-    
+
     data = data.slice(start,end);
 
-    // zeilen nach jeder Blättern löschen
+    //Die ersten vier Spaltennamen in die Tabelle
+    var keys = Object.keys(data[0]);
+    var newRow = table.insertRow(-1);
+    for( var h = 0; h < 4; h++) {
+        var header = document.createElement("TH");
+        header.innerHTML = keys[h].toUpperCase();
+        newRow.appendChild(header);
+    }
+    table.appendChild(newRow);
+
+    // Alle Tabellenzeilen nach jedem Blättern löschen
     for (var k = 1; k < table.rows.length; k++ ) {
         table.rows[k].innerHTML = "";
     }
