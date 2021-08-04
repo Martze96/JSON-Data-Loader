@@ -68,17 +68,24 @@ function replaceData(table,data,start,end) {
     //Die ersten vier Spaltennamen in die Tabelle
     var keys = Object.keys(data[0]);
     var newRow = table.insertRow(-1);
+
+    //Tabelle löschen um mit neuen Elementen ersetzt zu werden
+    table.innerHTML = "";
+    
+    //Tabellenheader erstellen
+    var iterator = 0; 
     for( var h = 0; h < 4; h++) {
         var header = document.createElement("TH");
         header.innerHTML = keys[h].toUpperCase();
+        header.setAttribute('id', 'column-' +keys[h]);
+        header.setAttribute('class', 'tableHeader');
+        header.addEventListener("click", function() {
+            sortDataByColumn(table,json,this.getAttribute('id'),true);
+        });
         newRow.appendChild(header);
     }
     table.appendChild(newRow);
 
-    // Alle Tabellenzeilen nach jedem Blättern löschen
-    for (var k = 1; k < table.rows.length; k++ ) {
-        table.rows[k].innerHTML = "";
-    }
     var iterator = 0; 
 
     // Zeilen einfügen
@@ -99,7 +106,16 @@ function replaceData(table,data,start,end) {
         }
         
     }
-
 }
-
-
+// Case sensitivy nicht dabei, bei E-Mail (EmployeeData) Sortierung zu sehen!
+function sortDataByColumn(table,data, columnID, asc) {
+    var column = columnID.substring(7);
+    data.sort(function(a, b) {
+        if (asc) {
+            return (a[column] > b[column]) ? 1 : ((a[column] < b[column]) ? -1 : 0);
+        } else {
+            return (b[column] > a[column]) ? 1 : ((b[column] < a[column]) ? -1 : 0);
+        }
+    });
+    replaceData(table,data,dataStart,dataEnd);
+}
