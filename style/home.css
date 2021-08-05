@@ -114,6 +114,10 @@ input[type="file"] {
   display: inline-block;
 }
 
+#searchInput {
+  box-shadow: 0px 0px 5px grey;
+}
+
 
 
 

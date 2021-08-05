@@ -80,7 +80,8 @@ function replaceData(table,data,start,end) {
         header.setAttribute('id', 'column-' +keys[h]);
         header.setAttribute('class', 'tableHeader');
         header.addEventListener("click", function() {
-            sortDataByColumn(table,json,this.getAttribute('id'),true);
+            sortDataByColumn(table,json,this.getAttribute('id'),sortAscDesc);
+            sortAscDesc = !sortAscDesc;
         });
         newRow.appendChild(header);
     }
@@ -108,14 +109,15 @@ function replaceData(table,data,start,end) {
     }
 }
 // Case sensitivy nicht dabei, bei E-Mail (EmployeeData) Sortierung zu sehen!
-function sortDataByColumn(table,data, columnID, asc) {
+function sortDataByColumn(table,data, columnID, ascdesc) {
     var column = columnID.substring(7);
     data.sort(function(a, b) {
-        if (asc) {
+        if (ascdesc) {
             return (a[column] > b[column]) ? 1 : ((a[column] < b[column]) ? -1 : 0);
         } else {
             return (b[column] > a[column]) ? 1 : ((b[column] < a[column]) ? -1 : 0);
         }
     });
     replaceData(table,data,dataStart,dataEnd);
+    reloadWithPageSize(pageSize);
 }

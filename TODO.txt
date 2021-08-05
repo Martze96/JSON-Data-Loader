@@ -3,14 +3,17 @@ DONE--Tabellendaten bis about einfügen in die Webseite
 DONE--Pagination einbauen
 DONE Upload Funktion
 --Suchfunktion einbauen
--- Sortierfunktion der Spalten einabuen
+DONE--Sortierfunktion der Spalten einabuen
 --ggf. DetailedPage einbauen für anzeige des gesamten Datensatzes in einer Liste formatiert.
 -- für mobile optimieren
 -- ggf. Daten aus Cloud holen
+-- Sample Daten verwenden Option, da hier nur JSON Arrays gehen
+-- Tutorial und Beschreibung in html einfügen
 //OPTIONAL
 -TODO für JSON Objects anpassen
 -TODO für JSON Objects und Arrays mit Hierarchie anpassen
 -TODO auch für csv Dateien anpassen
+-TODO Bug, bei Email, Employee data P kommt bei E-Mail zuerst (Case sensitive?)
 
 -- Seite ist schon noch etwas gekoppelt von der Mainpage, (bspw. keine parameter bei pagenext/pagebefore (welche Tabelle?), Seitenzahl)
 
@@ -58,7 +61,6 @@ pagination läuft logisch gesehen, aber sehr unschön, nun der versuch das ganze
 
 04.08.2021
 -DONE TODO Sortierfunktion einbauen
--TODO ascending, descending abwechselnd
--TODO Case sensitive machen
+-DONE TODO ascending, descending abwechselnd
 
 

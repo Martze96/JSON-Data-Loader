@@ -31,6 +31,10 @@
       <p id="uploadedFileName">Keine Datei hochgeladen.</p>
     </div>
 
+    <div class = "searchPanel">
+      <input type="text" id="searchInput" onkeyup="search()" placeholder="Suche nach Namen..." title="Eingabe eines Namens">
+    </div>
+
 
     <div class="pageSizeSelector" id= "page-size-selector" style = "visibility: hidden;">
       <p id = "pageSizeInfo">Zeilen pro Seite: </p>
@@ -66,6 +70,7 @@
     var dataStart = 0;
     var dataEnd = dataStart + pageSize;
     var mainTable = document.getElementById('data-table');
+    var sortAscDesc = true;
     
     document.getElementById("button_next").addEventListener("click", () => { switchPage(page, page + 1); });
     document.getElementById("button_prev").addEventListener("click", () => { switchPage(page, page - 1); });
