@@ -14,6 +14,7 @@ DONE--Sortierfunktion der Spalten einabuen
 -TODO für JSON Objects und Arrays mit Hierarchie anpassen
 -TODO auch für csv Dateien anpassen
 -TODO Bug, bei Email, Employee data P kommt bei E-Mail zuerst (Case sensitive?)
+-TODO Suchfunktion anpassen nach variablen Daten?
 
 -- Seite ist schon noch etwas gekoppelt von der Mainpage, (bspw. keine parameter bei pagenext/pagebefore (welche Tabelle?), Seitenzahl)
 
@@ -67,6 +68,7 @@ pagination läuft logisch gesehen, aber sehr unschön, nun der versuch das ganze
 05.08.2021
 -DONE TODO Suchfunktion optisch
 -DONE TODO Suchfunktion logisch
--TODO Suchfunktion anpassen nach variablen Daten?
+
+-TODO DetailedPage
 
 
