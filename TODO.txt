@@ -1,8 +1,8 @@
 DONE--CORS umgehen --> in vscode mit live server plugin
 DONE--Tabellendaten bis about einfügen in die Webseite 
 DONE--Pagination einbauen
-DONE Upload Funktion
---Suchfunktion einbauen
+DONE--Upload Funktion
+DONE--Suchfunktion einbauen
 DONE--Sortierfunktion der Spalten einabuen
 --ggf. DetailedPage einbauen für anzeige des gesamten Datensatzes in einer Liste formatiert.
 -- für mobile optimieren
@@ -46,6 +46,7 @@ pagination läuft logisch gesehen, aber sehr unschön, nun der versuch das ganze
 30.07.2021
 -DONE TODO Anzeige Daten pro Seite anpassen per Buttons 5, 10, 15
 -DONE TODO PageSizebuttons zentrieren 
+
 31.07.2021
 -DONE TODO Upload-Funktion
 
