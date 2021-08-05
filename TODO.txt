@@ -63,4 +63,9 @@ pagination läuft logisch gesehen, aber sehr unschön, nun der versuch das ganze
 -DONE TODO Sortierfunktion einbauen
 -DONE TODO ascending, descending abwechselnd
 
+05.08.2021
+-DONE TODO Suchfunktion optisch
+-DONE TODO Suchfunktion logisch
+-TODO Suchfunktion anpassen nach variablen Daten?
+
 

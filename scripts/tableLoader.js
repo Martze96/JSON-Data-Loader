@@ -16,6 +16,7 @@ function loadData() {
             document.getElementById('pagination-container').style.visibility = "visible";
             document.getElementById('data-table').style.visibility = "visible";
             document.getElementById('page-size-selector').style.visibility = "visible";
+            document.getElementById('searchInput').style.visibility = "visible";
             document.getElementById("uploadedFileName").innerHTML = files[0].name;
             let reader = new FileReader();
             //const self = this; nicht nötig scheinbar
@@ -121,3 +122,25 @@ function sortDataByColumn(table,data, columnID, ascdesc) {
     replaceData(table,data,dataStart,dataEnd);
     reloadWithPageSize(pageSize);
 }
+
+function search() {
+    // Variablen
+    var input, filter, table, tr, td, i, txtValue;
+    input = document.getElementById("searchInput");
+    filter = input.value.toUpperCase();
+    table = document.getElementById("data-table");
+    tr = table.getElementsByTagName("tr");
+  
+    // Search loop
+    for (i = 0; i < tr.length; i++) {
+      td = tr[i].getElementsByTagName("td")[1];
+      if (td) {
+        txtValue = td.textContent || td.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+          tr[i].style.display = "";
+        } else {
+          tr[i].style.display = "none";
+        }
+      }
+    }
+  }
