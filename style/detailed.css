@@ -1,0 +1,27 @@
+.entryTitle {
+    margin-top: 125px;
+    text-align: center;
+    font-family: sans-serif;
+    font-weight: 600;
+    color: var(--darkbluefont);
+    font-size: 20px;
+}
+
+.entryContent {
+    margin-left: 50px;
+    margin-top: 50px;
+}
+
+.entryList {
+    font-family: sans-serif;
+}
+
+.entryField {
+    color: var(--steelblue);
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.entryDesc {
+    margin: 12px;
+}
