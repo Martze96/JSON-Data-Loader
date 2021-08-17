@@ -69,6 +69,11 @@ pagination läuft logisch gesehen, aber sehr unschön, nun der versuch das ganze
 -DONE TODO Suchfunktion optisch
 -DONE TODO Suchfunktion logisch
 
--TODO DetailedPage
+17.08.2021
+-DONE TODO Detailed Page Template
+
+-TODO DetailedPage logic 
+-TODO Datatable entries als anchors
+-TODO Nach Logic nochmal DetailedPage Design
 
 
