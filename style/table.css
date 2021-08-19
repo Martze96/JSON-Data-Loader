@@ -16,6 +16,10 @@
   cursor: pointer;
 }
 
+.dataTable th:hover {
+  background-color: #4b98fd;
+}
+
 .dataTable td {
   border: 1px solid lightgrey;
   padding: 4px 8px;
@@ -29,6 +33,17 @@
   background-color: white;
 }
 
+.dataTable tr:hover td {
+  background-color: #4b98fd;
+  cursor: pointer;
+}
+
 #data-table tr.header, #data-table tr:hover {
   background-color: #5f5757;
 }
+
+.entryLink {
+  text-decoration: none;
+  color: black;
+}
+

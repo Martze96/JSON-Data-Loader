@@ -8,11 +8,14 @@
   <link rel="stylesheet" href="../style/main.css">
   <link rel="stylesheet" href="../style/home.css">
   <link rel="stylesheet" href="../style/detailed.css">
+
+  <script type="text/javascript" src="../scripts/detailed.js"></script>
+
 </head>
 
 
 
-<body>
+<body onload = "createDetailedList();changeWindowTitle();">
 
   <div class="topBar">
     <h1 class="topBarHeader"> JSON Datentabelle </h1>
@@ -23,13 +26,13 @@
   </div>
 
   <div class="entryContent">
-    <dl class = "entryList">
-      <dt class = "entryField">Name</dt>
-      <dd class = "entryDesc">Das hier ist sein Name</dd>
-      <dt class = "entryField">E-Mail</dt>
-      <dd class = "entryDesc">Das hier ist seine E-Mail</dd>
-    
+    <dl class = "entryList" id = "entry-list">
+ 
     </dl>
   </div>
+<script>
 
+</script>
 </body>
+
+

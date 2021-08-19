@@ -13,10 +13,7 @@ function loadData() {
                 return;
             }
             let file = files[0];
-            document.getElementById('pagination-container').style.visibility = "visible";
-            document.getElementById('data-table').style.visibility = "visible";
-            document.getElementById('page-size-selector').style.visibility = "visible";
-            document.getElementById('searchInput').style.visibility = "visible";
+            makeTableElementsVisible();
             document.getElementById("uploadedFileName").innerHTML = files[0].name;
             let reader = new FileReader();
             //const self = this; nicht nötig scheinbar
@@ -26,13 +23,18 @@ function loadData() {
                 json = JSON.parse(event.target.result);             // event target result ist der Inhalt vom JSON File (Ergebnis vom reader?)
                 replaceData(mainTable, json, dataStart,dataEnd);
                 displayPages();
+                //save file in local Storage
+                localStorage["file"] = JSON.stringify(json);
+
+                
             };
             reader.readAsText(file); //nochmal einspeicherung in den Reader als Text? obwohl ich das schon mit JSON Parse gemacht habe glaube ich
-
         } catch (err) {
             console.error(err);
         }
+    
     }
+
     
 
 
@@ -58,6 +60,13 @@ function loadData() {
 
   // replaceData(mainTable, json, dataStart,dataEnd);
   // displayPages();
+}
+
+function makeTableElementsVisible() {
+    document.getElementById('pagination-container').style.visibility = "visible";
+    document.getElementById('data-table').style.visibility = "visible";
+    document.getElementById('page-size-selector').style.visibility = "visible";
+    document.getElementById('searchInput').style.visibility = "visible";
 }
 
 // aktualisiert Tabelleninhalt mit input json Array von den anzuzeigenden Daten (data), start end für den Bereich der anzuzeigenden Daten ( f. Pagination)
@@ -94,6 +103,8 @@ function replaceData(table,data,start,end) {
     for (var i in data) {                       // ggf. hier mal ein Template festlegen
 
         var newRow = table.insertRow(-1);
+        newRow.setAttribute("id", data[i].id);
+       // newRow.classList.add("entryLink");
     
 
         for (var j in data[i]) {
@@ -104,7 +115,7 @@ function replaceData(table,data,start,end) {
             }
             iterator++;
             var cell = newRow.insertCell(-1);
-            cell.innerHTML = data[i][j];
+            cell.innerHTML = '<a href="pages/detailedEntry.html#' + data[i].id + '" class="entryLink" id="' + data[i][j] +'">' + data[i][j] + '</a>';
         }
         
     }
@@ -130,9 +141,11 @@ function search() {
     filter = input.value.toUpperCase();
     table = document.getElementById("data-table");
     tr = table.getElementsByTagName("tr");
+
+    replaceData(table,json,0,json.length);
   
     // Search loop
-    for (i = 0; i < tr.length; i++) {
+    for (i = 0; i < json.length; i++) {
       td = tr[i].getElementsByTagName("td")[1];
       if (td) {
         txtValue = td.textContent || td.innerText;
@@ -144,3 +157,5 @@ function search() {
       }
     }
   }
+
+
