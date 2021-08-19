@@ -80,5 +80,7 @@ pagination läuft logisch gesehen, aber sehr unschön, nun der versuch das ganze
 -TODO DetailedPage Überschrift anpassen mit Entry ID einfügen
 -TODO Nach Logic nochmal DetailedPage Design (Struktur, Groß-Kleinschreibung)
 -TODO Back oder Home Button
+-TODO Homepage Suche noch neben Suchenbalken
+-TODO in DetailedPage SwitchPage zu nächsten/vorherigen
 
 
