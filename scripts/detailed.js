@@ -22,6 +22,9 @@
     // on bodyload of detailed
     function changeWindowTitle() {
         window.document.title = 'Data Entry #' + getUrlFragment();
+       entryHeader = document.getElementById('entry-title').children[0];
+       console.log(entryHeader);
+       entryHeader.innerHTML = "Detailansicht ID: " + getUrlFragment();
     }
     // on bodyload of detailed 
     function createDetailedList(){
@@ -30,13 +33,16 @@
         console.log(entry);
 
         for(var i in entry) {
-                newField = document.createElement("DT");
+                newRow = document.createElement("LI");
+                newRow.className = "entryRow";
+                newField = document.createElement("LI");
                 newField.className = "entryField";
-                newField.innerHTML = i;
-                newDesc = document.createElement("DD");
+                newField.innerHTML = i.charAt(0).toUpperCase() + i.slice(1); 
+                newDesc = document.createElement("LI");
                 newDesc.className = "entryDesc";
                 newDesc.innerHTML = entry[i];
-                list.appendChild(newField);
-                list.appendChild(newDesc);        
+                newRow.appendChild(newField);
+                newRow.appendChild(newDesc);
+                list.appendChild(newRow);        
         }
     }

@@ -8,20 +8,42 @@
 }
 
 .entryContent {
-    margin-left: 50px;
+    margin-left: 0px;
     margin-top: 50px;
 }
 
 .entryList {
     font-family: sans-serif;
+    list-style-type: none;
+    width: 30%;
+    min-width: 400px;
+    max-width: 100%;
+    padding-left: 0px;
+    margin-left: 3%;
 }
+
+.entryRow {
+    background: var(--skyblue);
+    padding: 5px;
+    margin: 15px;
+    box-shadow: 0px 0px 5px grey;
+    border-radius: 5px;
+}
+
+
 
 .entryField {
     color: var(--steelblue);
     font-weight: 600;
     font-size: 18px;
+    margin: 5px;
+    padding: 5px;
+
 }
 
 .entryDesc {
-    margin: 12px;
+    margin: 5px;
+    padding: 5px;
+    font-weight: 600;
+
 }

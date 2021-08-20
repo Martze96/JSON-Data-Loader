@@ -77,10 +77,12 @@ pagination läuft logisch gesehen, aber sehr unschön, nun der versuch das ganze
 -DONE TODO DetailedPage logic 
 -DONE TODO Datatable entries als anchors
 
--TODO DetailedPage Überschrift anpassen mit Entry ID einfügen
--TODO Nach Logic nochmal DetailedPage Design (Struktur, Groß-Kleinschreibung)
--TODO Back oder Home Button
--TODO Homepage Suche noch neben Suchenbalken
+-DONE TODO DetailedPage Überschrift anpassen mit Entry ID einfügen
+-DONE TODO Homepage Suche noch neben Suchenbalken
+
+-DONE TODO Nach Logic nochmal DetailedPage Design (Struktur, Groß-Kleinschreibung)
 -TODO in DetailedPage SwitchPage zu nächsten/vorherigen
+-TODO Back oder Home Button
+-TODO Tableheader Sortierung Indikator hinzufügen (Pfeil runter/hoch Symbol)
 
 

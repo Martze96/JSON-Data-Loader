@@ -67,7 +67,7 @@ text-align: center;
 }
 
 .pageSizeSelector {
-  
+
 }
 
 .pageSizeButton {
@@ -114,6 +114,12 @@ input[type="file"] {
   color: var(--darkbluefont);
   font-weight: 600;
   display: inline-block;
+}
+
+#searchLabel {
+  font-family: sans-serif;
+  color: var(--darkbluefont);
+  margin-right: 10px;
 }
 
 #searchInput {

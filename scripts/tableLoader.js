@@ -66,6 +66,7 @@ function makeTableElementsVisible() {
     document.getElementById('pagination-container').style.visibility = "visible";
     document.getElementById('data-table').style.visibility = "visible";
     document.getElementById('page-size-selector').style.visibility = "visible";
+    document.getElementById('searchLabel').style.visibility = "visible";
     document.getElementById('searchInput').style.visibility = "visible";
 }
 
