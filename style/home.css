@@ -18,6 +18,10 @@
   font-weight: 200 !important;
 }
 
+.topBarHeader {
+  margin-right: 100px;
+}
+
 .pageDesc {
   /* Add a top margin to avoid content overlay */
   margin-top:125px;
