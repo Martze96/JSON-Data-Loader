@@ -8,7 +8,7 @@ DONE--Sortierfunktion der Spalten einabuen
 -- für mobile optimieren
 -- ggf. Daten aus Cloud holen
 -- Sample Daten verwenden Option, da hier nur JSON Arrays gehen
--- Tutorial und Beschreibung in html einfügen
+-- Tutorial und Beschreibung in html (oder Readme.md) einfügen
 //OPTIONAL
 -TODO für JSON Objects anpassen
 -TODO für JSON Objects und Arrays mit Hierarchie anpassen
@@ -77,12 +77,13 @@ pagination läuft logisch gesehen, aber sehr unschön, nun der versuch das ganze
 -DONE TODO DetailedPage logic 
 -DONE TODO Datatable entries als anchors
 
+20.08.2021
 -DONE TODO DetailedPage Überschrift anpassen mit Entry ID einfügen
 -DONE TODO Homepage Suche noch neben Suchenbalken
-
 -DONE TODO Nach Logic nochmal DetailedPage Design (Struktur, Groß-Kleinschreibung)
--TODO in DetailedPage SwitchPage zu nächsten/vorherigen
--TODO Back oder Home Button
--TODO Tableheader Sortierung Indikator hinzufügen (Pfeil runter/hoch Symbol)
+-DONE TODO Back oder Home Button
 
+-TODO Back Button Design & Position
+-TODO Tableheader Sortierung Indikator hinzufügen (Pfeil runter/hoch Symbol)
+-TODO in DetailedPage SwitchPage zu nächsten/vorherigen
 
