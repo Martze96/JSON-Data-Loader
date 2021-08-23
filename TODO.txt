@@ -9,6 +9,7 @@ DONE --ggf. DetailedPage einbauen für anzeige des gesamten Datensatzes in einer
 -- ggf. Daten aus Cloud holen
 -- Sample Daten verwenden Option, da hier nur JSON Arrays gehen
 -- Tutorial und Beschreibung in html (oder Readme.md) einfügen
+-- Architektur überdenken
 //OPTIONAL
 -TODO für JSON Objects anpassen
 -TODO für JSON Objects und Arrays mit Hierarchie anpassen
