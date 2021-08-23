@@ -7,6 +7,24 @@
     font-size: 20px;
 }
 
+#detailed-pagination-container {
+    text-align: center;
+
+}
+.detailedPageButton {
+    margin-right: 20px;
+    margin-left: 20px;
+    padding: 5px;
+    border: 1px solid dimgray;
+    box-shadow: 0px 0px 5px grey;
+    font-family: sans-serif;
+    font-size: 18px;
+    color: white;
+    background-color: var(--steelblue);
+    cursor:pointer;
+    border-radius: 5px;
+}
+
 .entryContent {
     margin-left: 0px;
     margin-top: 50px;

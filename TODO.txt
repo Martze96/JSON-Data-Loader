@@ -4,7 +4,7 @@ DONE--Pagination einbauen
 DONE--Upload Funktion
 DONE--Suchfunktion einbauen
 DONE--Sortierfunktion der Spalten einabuen
---ggf. DetailedPage einbauen für anzeige des gesamten Datensatzes in einer Liste formatiert.
+DONE --ggf. DetailedPage einbauen für anzeige des gesamten Datensatzes in einer Liste formatiert.
 -- für mobile optimieren
 -- ggf. Daten aus Cloud holen
 -- Sample Daten verwenden Option, da hier nur JSON Arrays gehen
@@ -85,6 +85,8 @@ pagination läuft logisch gesehen, aber sehr unschön, nun der versuch das ganze
 
 -DONE TODO Back Button Design & Position
 
--TODO Tableheader Sortierung Indikator hinzufügen (Pfeil runter/hoch Symbol)
--TODO in DetailedPage SwitchPage zu nächsten/vorherigen
+-DONE TODO Tableheader Sortierung Indikator hinzufügen (Pfeil runter/hoch Symbol)
+-DONE TODO in DetailedPage SwitchPage zu nächsten/vorherigen
 
+TODO für mobile optimieren
+TODO Überschriften anpassen? Thema festlegen?

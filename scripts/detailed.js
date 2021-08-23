@@ -23,14 +23,12 @@
     function changeWindowTitle() {
         window.document.title = 'Data Entry #' + getUrlFragment();
        entryHeader = document.getElementById('entry-title').children[0];
-       console.log(entryHeader);
        entryHeader.innerHTML = "Detailansicht ID: " + getUrlFragment();
     }
     // on bodyload of detailed 
     function createDetailedList(){
         entry = getEntryRow();
         list = document.getElementById("entry-list")
-        console.log(entry);
 
         for(var i in entry) {
                 newRow = document.createElement("LI");
@@ -45,4 +43,42 @@
                 newRow.appendChild(newDesc);
                 list.appendChild(newRow);        
         }
+    }
+
+    function getNextID() {
+        idCode = getUrlFragment();
+        data = getStoredFile();
+        list = document.getElementById("entry-list");
+        list.innerHTML= "";
+        for( var s in data) {
+            if(data[s].id == idCode && s != data.length-1) {    
+                s++;
+                window.location.hash = data[s++].id;
+                createDetailedList();
+                changeWindowTitle();
+                sessioncounter--;
+                return;
+                           
+            }
+        }
+        
+    }
+
+    function getPrevID() {
+        idCode = getUrlFragment();
+        data = getStoredFile();
+        list = document.getElementById("entry-list");
+        list.innerHTML= "";
+        for( var s in data) {
+            if(data[s].id == idCode && s != 0) {
+                s--;
+                window.location.hash = data[s--].id;
+                createDetailedList();
+                changeWindowTitle();
+                sessioncounter--;
+                return;
+               
+            }
+        }
+        
     }

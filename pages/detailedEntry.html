@@ -18,12 +18,17 @@
 <body onload = "createDetailedList();changeWindowTitle();">
 
   <div class="topBar">
-    <button onclick="history.back()" id="nav-back-button">Zurück</button>
+    <button onclick="history.go(sessioncounter);" id="nav-back-button">Zurück</button>
     <h1 class="topBarHeader"> JSON Datentabelle </h1>
   </div>
 
   <div class = "entryTitle" id= "entry-title">
     <p>Hier steht die Überschrift des Datensatzes</p>
+  </div>
+
+  <div id="detailed-pagination-container" >
+    <span class="detailedPageButton" id="detailed-button_prev" onclick="getPrevID()">Vorherige</span>
+    <span class="detailedPageButton" id="detailed-button_next" onclick="getNextID()">Nächste</span>
   </div>
 
   <div class="entryContent">
@@ -32,7 +37,8 @@
     </ul>
   </div>
 <script>
-
+  //global variavle to count how many pagings there were to go back in history to the point where session is still alive (file uploaded)
+  var sessioncounter = -1;
 </script>
 </body>
 
