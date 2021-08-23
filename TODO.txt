@@ -15,7 +15,7 @@ DONE--Sortierfunktion der Spalten einabuen
 -TODO auch für csv Dateien anpassen
 -TODO Bug, bei Email, Employee data P kommt bei E-Mail zuerst (Case sensitive?)
 -TODO Suchfunktion anpassen nach variablen Daten?
--BUG Test 4 wird immer in der Suche angezeigt
+-DONE BUG Test 4 wird immer in der Suche angezeigt
 
 -- Seite ist schon noch etwas gekoppelt von der Mainpage, (bspw. keine parameter bei pagenext/pagebefore (welche Tabelle?), Seitenzahl)
 
@@ -83,7 +83,8 @@ pagination läuft logisch gesehen, aber sehr unschön, nun der versuch das ganze
 -DONE TODO Nach Logic nochmal DetailedPage Design (Struktur, Groß-Kleinschreibung)
 -DONE TODO Back oder Home Button
 
--TODO Back Button Design & Position
+-DONE TODO Back Button Design & Position
+
 -TODO Tableheader Sortierung Indikator hinzufügen (Pfeil runter/hoch Symbol)
 -TODO in DetailedPage SwitchPage zu nächsten/vorherigen
 

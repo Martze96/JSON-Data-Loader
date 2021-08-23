@@ -19,6 +19,7 @@
 }
 
 .topBarHeader {
+  /*margin right for centering even with back button displayed on left side (not a good solution)*/
   margin-right: 100px;
 }
 

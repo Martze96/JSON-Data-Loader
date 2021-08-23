@@ -121,9 +121,10 @@ function replaceData(table,data,start,end) {
         
     }
 }
-// Case sensitivy nicht dabei, bei E-Mail (EmployeeData) Sortierung zu sehen!
+// Case sensitivy nicht dabei, bei E-Mail (EmployeeData) Sortierung zu sehen! ansonsten Uppercase, Problem nur ist dass ID eine Nummber ist und das nicht gehen würde
 function sortDataByColumn(table,data, columnID, ascdesc) {
     var column = columnID.substring(7);
+
     data.sort(function(a, b) {
         if (ascdesc) {
             return (a[column] > b[column]) ? 1 : ((a[column] < b[column]) ? -1 : 0);
@@ -131,8 +132,17 @@ function sortDataByColumn(table,data, columnID, ascdesc) {
             return (b[column] > a[column]) ? 1 : ((b[column] < a[column]) ? -1 : 0);
         }
     });
+
     replaceData(table,data,dataStart,dataEnd);
     reloadWithPageSize(pageSize);
+    //adding sorting direction indicator to tableheader
+    var columnText = document.getElementById(columnID);
+    if(ascdesc){
+        columnText.innerHTML = columnText.innerHTML + ' &#8593;';
+    } else {
+        columnText.innerHTML = columnText.innerHTML + ' &#8595;';
+    }
+
 }
 
 function search() {
