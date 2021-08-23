@@ -146,7 +146,7 @@ function search() {
     replaceData(table,json,0,json.length);
   
     // Search loop
-    for (i = 0; i < json.length; i++) {
+    for (i = 0; i <= json.length; i++) {
       td = tr[i].getElementsByTagName("td")[1];
       if (td) {
         txtValue = td.textContent || td.innerText;
