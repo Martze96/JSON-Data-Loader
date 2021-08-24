@@ -91,3 +91,5 @@ pagination läuft logisch gesehen, aber sehr unschön, nun der versuch das ganze
 
 TODO für mobile optimieren
 TODO Überschriften anpassen? Thema festlegen?
+
+TODO API erstellen in aws
