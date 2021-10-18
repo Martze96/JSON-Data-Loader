@@ -1,4 +1,7 @@
 # WebApp
+
+GOAL: Learning how to handle (.JSON) Data and User Uploads
+
 ONLY WORKS WITH DEFINED EXAMPLE DATASET
 
 You can find the Dataset which the App is designed for within the project folder with the name "EmployeeData.json".
